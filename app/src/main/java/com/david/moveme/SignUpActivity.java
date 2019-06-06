@@ -34,9 +34,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
     @BindView(R.id.login)  TextView login;
-    @BindView(R.id.name)  customfonts.EditText__SF_Pro_Display_Light mNameEditText;
+    @BindView(R.id.name)  EditText mNameEditText;
     @BindView(R.id.email)  EditText mEmailEditText;
-    @BindView(R.id.password)  EditText mPasswordEditText;
+    @BindView(R.id.pass)  EditText mPasswordEditText;
 
     private customfonts.MyTextView_Roboto_Regular signup;
 
@@ -82,8 +82,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
 
         } else if (v == signup) {
-            createNewUser();
-
+            Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            finish();
+            startActivity(intent);
         }
     }
 
@@ -91,17 +93,17 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
-        String password = mPasswordEditText.getText().toString().trim();
+        String pass = mPasswordEditText.getText().toString().trim();
         mName = mNameEditText.getText().toString().trim();
 
 
         boolean validEmail = isValidEmail(email);
         boolean validName = isValidName(name);
-        boolean validPassword = isValidPassword(password);
+        boolean validPassword = isValidPassword(pass);
         if (!validEmail || !validName || !validPassword) return;
 
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -118,7 +120,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         mAuthProgressDialog.show();
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override

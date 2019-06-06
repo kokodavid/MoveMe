@@ -1,11 +1,9 @@
 package com.david.moveme;
 
-import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -17,13 +15,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-
-public class BookARIde extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener{
-
-    ImageView car1,car2,car3,car4,car5;
+public class DriverActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private double radius = 2000;
-private customfonts.Button_SF_Pro_Display_Medium mDriver;
+
 
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
@@ -32,42 +27,21 @@ private customfonts.Button_SF_Pro_Display_Medium mDriver;
 
     private GoogleMap mMap;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_aride);
-
-
-        mDriver = findViewById(R.id.driver);
-        mDriver.setOnClickListener(this);
-
-        car1=findViewById(R.id.car1);
-        car2=findViewById(R.id.car2);
-        car3=findViewById(R.id.car3);
-        car4=findViewById(R.id.car4);
-//        car5=findViewById(R.id.car5);
-
-
-        car1.setOnClickListener(this);
-        car2.setOnClickListener(this);
-        car3.setOnClickListener(this);
-        car4.setOnClickListener(this);
-//        car5.setOnClickListener(this);
-
-
-
-
+        setContentView(R.layout.activity_driver);
 
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.googleMap);
-        mapFragment.
-                getMapAsync(this);
+        mapFragment.getMapAsync(this);
+
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-//      googleMap.setMyLocationEnabled(true);
 
         mMap = googleMap;
         LatLng origin = new LatLng(-1.297278, 36.779139);
@@ -115,7 +89,7 @@ private customfonts.Button_SF_Pro_Display_Medium mDriver;
         marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
 
         CameraPosition cameraPosition = new CameraPosition.Builder().target(
-                latLng).zoom(14).build();
+                latLng).zoom(13).build();
 
 
         googleMap.animateCamera(
@@ -124,67 +98,10 @@ private customfonts.Button_SF_Pro_Display_Medium mDriver;
                 CameraUpdateFactory.newCameraPosition(cameraPosition));
 
 
-
-
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
-
-        if (view == mDriver) {
-            Intent intent = new Intent(BookARIde.this, DriverActivity.class);
-            startActivity(intent);
-        }
-
-        switch (view.getId()) {
-
-            case R.id.car1:
-                car1.setImageResource(R.drawable.car);
-                car2.setImageResource(R.drawable.car3);
-                car3.setImageResource(R.drawable.car5);
-                car4.setImageResource(R.drawable.car3);
-//                car5.setImageResource(R.drawable.car3);
-
-                break;
-
-
-
-
-            case R.id.car2:
-                car1.setImageResource(R.drawable.car3);
-                car2.setImageResource(R.drawable.car);
-                car3.setImageResource(R.drawable.car5);
-                car4.setImageResource(R.drawable.car3);
-//                car5.setImageResource(R.drawable.car3);
-
-
-
-                break;
-            case R.id.car3:
-                car1.setImageResource(R.drawable.car3);
-                car2.setImageResource(R.drawable.car5);
-                car3.setImageResource(R.drawable.car);
-                car4.setImageResource(R.drawable.car3);
-//                car5.setImageResource(R.drawable.car3);
-
-                break;
-            case R.id.car4:
-                car1.setImageResource(R.drawable.car3);
-                car2.setImageResource(R.drawable.car5);
-                car3.setImageResource(R.drawable.car3);
-                car4.setImageResource(R.drawable.car);
-//                car5.setImageResource(R.drawable.car5);
-
-                break;
-//            case R.id.car5:
-//                car1.setImageResource(R.drawable.car3);
-//                car2.setImageResource(R.drawable.car5);
-//                car3.setImageResource(R.drawable.car3);
-//                car4.setImageResource(R.drawable.car5);
-//                car5.setImageResource(R.drawable.car);
-//
-//                break;
-        }
     }
 }

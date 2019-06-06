@@ -161,7 +161,7 @@ tools:context=".BookARIde">
                     <customfonts.MyTextView_SF_Pro_Display_Semibold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SEDAN"
+                        android:text="S-Truck"
                         android:layout_marginTop="11.2dp"
                         android:textColor="#ffffff"
                         android:textSize="14sp"
@@ -172,7 +172,7 @@ tools:context=".BookARIde">
                         android:id="@+id/car1"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/car"
+                        android:src="@drawable/koki"
                         android:layout_marginLeft="4dp"
                         android:layout_marginTop="4dp" />
 
@@ -181,7 +181,7 @@ tools:context=".BookARIde">
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="8dp"
-                        android:text="80/="
+                        android:text="5000/="
                         android:textSize="14sp"
                         android:textColor="#606470"/>
 
@@ -196,7 +196,7 @@ tools:context=".BookARIde">
                     <customfonts.MyTextView_SF_Pro_Display_Semibold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HATCHBACK"
+                        android:text="M-Truck"
                         android:layout_marginTop="11.2dp"
                         android:textColor="#ffffff"
                         android:textSize="14sp"
@@ -206,7 +206,7 @@ tools:context=".BookARIde">
                         android:id="@+id/car2"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/car3"
+                        android:src="@drawable/kj"
                         android:layout_marginLeft="22dp"
                         android:layout_marginTop="4dp"
                         />
@@ -217,7 +217,7 @@ tools:context=".BookARIde">
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
                         android:layout_marginTop="8dp"
-                        android:text="100/="
+                        android:text="10000/="
                         android:textSize="14sp"
                         android:textColor="#606470"/>
 
@@ -232,7 +232,7 @@ tools:context=".BookARIde">
                     <customfonts.MyTextView_SF_Pro_Display_Semibold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="VAN"
+                        android:text="Ms-Truck"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="11.2dp"
                         android:textColor="#ffffff"
@@ -244,7 +244,7 @@ tools:context=".BookARIde">
                         android:id="@+id/car3"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/car3"
+                        android:src="@drawable/gh"
                         android:layout_marginTop="4dp" />
 
 
@@ -252,7 +252,7 @@ tools:context=".BookARIde">
                         android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="150/="
+                        android:text="15000/="
                         android:layout_marginTop="8dp"
                         android:textSize="14sp"
                         android:textColor="#606470"/>
@@ -268,7 +268,7 @@ tools:context=".BookARIde">
                     <customfonts.MyTextView_SF_Pro_Display_Semibold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SUV"
+                        android:text="B-TRUCK"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="11.2dp"
                         android:textColor="#ffffff"
@@ -280,7 +280,7 @@ tools:context=".BookARIde">
                         android:id="@+id/car4"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/car3"
+                        android:src="@drawable/ert"
                         android:layout_marginTop="4dp" />
 
 
@@ -288,7 +288,7 @@ tools:context=".BookARIde">
                         android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="200/="
+                        android:text="20000/="
                         android:layout_marginTop="8dp"
                         android:textSize="14sp"
                         android:textColor="#606470"/>
@@ -311,18 +311,18 @@ tools:context=".BookARIde">
         android:layout_marginBottom="10dp">
 
         <customfonts.Button_SF_Pro_Display_Medium
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="19.3dp"
-            android:layout_marginRight="18.1dp"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
+            android:id="@+id/driver"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="19.3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="18.1dp"
             android:background="@drawable/rect_blue"
             android:text="Confirm Pickup"
             android:textAllCaps="false"
             android:textColor="#ffffff"
-            android:textSize="15.4sp"/>
-
+            android:textSize="15.4sp" />
 
 
     </RelativeLayout>
